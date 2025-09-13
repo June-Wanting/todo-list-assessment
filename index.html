@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-labelledby="title">
+    <header>
+      <h1 id="title">To-Do List</h1>
+      <p class="sub">Manage tasks quickly. Keyboard tip: press <kbd>Enter</kbd> to add.</p>
+    </header>
+
+    <section class="controls" aria-label="Add a new task">
+      <div class="field">
+        <label for="new-task" class="visually-hidden">New task</label>
+        <input id="new-task" type="text" placeholder="e.g., Email the editor by 5pm" autocomplete="off" aria-describedby="error" />
+        <div id="error" class="error" aria-live="polite"></div>
+      </div>
+      <button class="add" id="add-btn" type="button" aria-label="Add task">Add</button>
+    </section>
+
+    <div class="toolbar" role="region" aria-label="Task filters and stats">
+      <div class="filters" role="radiogroup" aria-label="Filter tasks">
+        <input type="radio" id="filter-all" name="filter" value="all" checked>
+        <label for="filter-all">All</label>
+        <input type="radio" id="filter-active" name="filter" value="active">
+        <label for="filter-active">Active</label>
+        <input type="radio" id="filter-completed" name="filter" value="completed">
+        <label for="filter-completed">Completed</label>
+      </div>
+      <div class="counts" id="counts" aria-live="polite">0 items</div>
+    </div>
+
+    <ul id="todo-list" aria-live="polite" aria-label="To-do items"></ul>
+
+    <footer>
+      <p>Data is saved locally in your browser. Clearing site data will remove tasks.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
